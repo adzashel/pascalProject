@@ -1,11 +1,10 @@
 program index;
 uses crt;
 
-var option: Char;
+var option , option2: Char;
     i, j, rows, cols: Integer;
 
 begin
-  clrscr;
   WriteLn('-----------------Welcome to my program----------------');
   WriteLn('This program will help you to find ur  star pattern');
   WriteLn('Choose the pattern you want : ');
@@ -18,62 +17,91 @@ begin
 
   case option of
     '1': begin
-      // Right-angled triangle
-      WriteLn('Enter number of rows: ');
-      ReadLn(rows);
-      j := 1;
-      while j <= rows do
-        begin
-          i := 1;
-          while i <= j do
+        writeln('Number or stars ? ');
+        WriteLn('1. Stars');
+        WriteLn('2. Numbers');
+        ReadLn(option2);
+        
+        if option2 = '1' then
+          begin
+            WriteLn('Enter the number of rows : '); ReadLn(rows);
+            for i := 0 to rows - 1 do 
+              begin
+                for j := 0 to i do
+                    Write('*');
+                    WriteLn;              
+              end;
+          end
+          else 
             begin
-              Write('*');
-              i := i + 1;
+              Write('Enter the number of rows');
+              ReadLn(rows);
+              i := 1;
+              while i <= rows do
+                begin
+                  j := 1;
+                  while j <= i do
+                  begin
+                    Write(j:3);
+                    j := j + 1;
+                  end;
+                  WriteLn;
+                  i := i + 1;
+                end;
             end;
-          WriteLn;
-          j := j + 1;
-        end;
       end;
-    '2': begin
-      // Diamond
-      WriteLn('Enter number of rows: ');
-      ReadLn(rows);
-      j := 1;
-      while j <= rows do
+    '2': 
+    begin
+    // diamond
+      WriteLn('Choose number of stars : ');
+      WriteLn('1.Stars ');
+      WriteLn('2.Numbers');
+      ReadLn(option2);
+      
+      if option2 = '1' then
         begin
+          WriteLn(' Enter number of rows :'); ReadLn(rows);
           i := 1;
-          while i <= rows - j do
+          while i <= rows  do
             begin
-              Write(' ');
+              j := 1;
+              while  j <= rows - i do
+                begin
+                  Write(' ');
+                  j := j + 1;
+                end;
+              // print stars
+              j := 1;
+              while j <= 2 * i - 1 do
+                begin
+                  Write('*');
+                  j := j + 1;
+                end;
+              WriteLn;
               i := i + 1;
             end;
-          i := 1;
-          while i <= 2 * j - 1 do
-            begin
-              Write('*');
-              i := i + 1;
-            end;
-          WriteLn;
-          j := j + 1;
+
+            // lower diamond
+            i := rows - 1;
+            while  i >= 1 do
+              begin
+                j := 1;
+                while j <= rows - i do
+                  begin
+                    Write(' ');
+                    j := j + 1;
+                  end;
+                  j := 1;
+                  while j <= 2 * i - 1 do
+                    begin
+                      Write('*');
+                      j := j + 1;
+                    end;
+                  WriteLn;
+                  i := i - 1;
+              end;
         end;
-      j := rows - 1;
-      while j >= 1 do
-        begin
-          i := 1;
-          while i <= rows - j do
-            begin
-              Write(' ');
-              i := i + 1;
-            end;
-          i := 1;
-          while i <= 2 * j - 1 do
-            begin
-              Write('*');
-              i := i + 1;
-            end;
-          WriteLn;
-          j := j - 1;
-        end;
+
       end;
     '3': begin
       // Pyramid
