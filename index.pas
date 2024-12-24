@@ -193,44 +193,58 @@ begin
       end;
     '4': begin
       // Rhombus
-      WriteLn('Enter number of rows: ');
-      ReadLn(rows);
-      j := 1;
-      while j <= rows do
+      Writeln('Choose stars or numbers : ');
+      WriteLn('1. Stars');
+      Writeln('2. Numbers');
+      readln(option2);
+
+      if option2 = '1' then
         begin
-          i := 1;
-          while i <= rows - j do
-            begin
-              Write(' ');
-              i := i + 1;
-            end;
-          i := 1;
-          while i <= 2 * j - 1 do
-            begin
-              Write('*');
-              i := i + 1;
-            end;
-          WriteLn;
-          j := j + 1;
-        end;
-      j := rows - 1;
-      while j >= 1 do
-        begin
-          i := 1;
-          while i <= rows - j do
-            begin
-              Write(' ');
-              i := i + 1;
-            end;
-          i := 1;
-          while i <= 2 * j - 1 do
-            begin
-              Write('*');
-              i := i + 1;
-            end;
-          WriteLn;
-          j := j - 1;
-        end;
+        Write('Enter the number of rows :'); ReadLn(rows);
+          i := rows - 1;
+          while i >= 1 do
+          begin
+          j := 1;
+            while j <= rows - i do
+              begin
+                Write(' ');
+                j := j + 1;
+              end;
+              // priint stars
+              j := 1;
+              while j <= 2 * i - 1 do
+                begin
+                  Write('*');
+                  j := j + 1;
+                end;
+                WriteLn;
+                i := i - 1;
+          end;
+        end
+        else if option2 = '2' then
+          begin
+            writeln('Enter the number of rows :'); readln(rows);
+            // print spaces 
+            i := rows - 1;
+            while i >=1 do
+              begin
+                j:= 1;
+                while j >= rows - i do
+                begin
+                  Write(' ');
+                  j := j + 1;
+                end;
+                // print stars 
+                j := 1;
+                while j >= 2 * i - 1 do
+                begin
+                  Write(j);
+                  j := j + 1;
+                end;
+                WriteLn;
+                i := i - 1;
+              end;
+          end;
       end;
       '5' : 
       begin
