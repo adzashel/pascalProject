@@ -6,7 +6,7 @@ var option , option2: Char;
 
 begin
   WriteLn('-----------------Welcome to my program----------------');
-  WriteLn('This program will help you to find ur  star pattern');
+  WriteLn('This program provides the patterns that contains the stars or numbers');
   WriteLn('Choose the pattern you want : ');
   WriteLn('1. Right-angled triangle');
   WriteLn('2. Diamond');
@@ -26,7 +26,7 @@ begin
           begin
             WriteLn('Enter the number of rows : '); ReadLn(rows);
               i := 0;
-              while  i <= rows -1  do
+              while  i <= rows - 1  do
                 begin
                   j := 0;
                   while  j <= i do
@@ -160,8 +160,7 @@ begin
       if option2 = '1' then
         begin
             WriteLn('Enter the number of rows : '); ReadLn(rows);
-            // create pyramid
-           
+            // create pyramid   
             for i := 1 to rows do 
               begin
                 for j:= 1 to rows - i do 
@@ -247,21 +246,47 @@ begin
           end;
       end;
       '5' : 
-      begin
-        Writeln('Enter the number of rows');
-        ReadLn(rows);
-        WriteLn('Enter the number of columns');
-        ReadLn(cols);
-        for j := 1 to rows do 
         begin
-          for i := 1 to cols do
+          WriteLn('Choose stars or numbers');
+          Writeln('1. Stars ');
+          Writeln('2. Numbers');
+          ReadLn(option2);
+
+          if option2 = '1' then
             begin
-              WriteLn('*');
-            end;
-            WriteLn;
+              Writeln('Enter the numbers of rows : '); readln(rows);
+              writeln('Enter the numbers of coloumns :'); ReadLn(cols);
+              // print the stars
+              i := 0;
+              while i < rows do
+                begin
+                j := 0;
+                  while j < cols  do
+                    begin
+                      Write('*');
+                      j := j + 1;
+                    end;
+                    WriteLn;
+                    i := i + 1;
+                end;
+            end
+            else if option2 = '2' then
+              begin
+                Writeln('Enter the number of  rows : '); ReadLn(rows);
+                writeln('Enter the number of coloumns : '); ReadLn(cols);
+
+                // print the numbers
+                for i := 1 to rows do
+                    for j := 1 to cols do 
+                      Write(j);  
+                      WriteLn;   
+              end
+              else 
+              WriteLn('Invalid option , u can only choose between 1 and 2');
         end;
-      end;
-    else
-      WriteLn('Invalid option!');
+      else
+        begin
+          WriteLn('Invalid option');
+        end;
   end;
 end.
