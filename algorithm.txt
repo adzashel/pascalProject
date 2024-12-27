@@ -1,0 +1,162 @@
+program pascal;
+uses sysUtils , crt ;
+
+declaration variables
+option ,option2 : Char;
+i , j , rows , cols : integer;
+
+begin the program
+	print(' -----------------Welcome to my program---------------- ')
+	print('This program provides you the pattern that contains stars or numbers')
+	print('Choose the pattern you want : ');
+ 	print('1. Right-angled triangle');
+  	print('2. Diamond');
+  	print('3. Pyramid');
+  	print('4. Rhombus');
+  	print('5. Rectangle');
+  	read(option);
+
+ case option of
+	1 : 
+	start case 1
+	    print('Choose the stars or numbers : '); 
+	    print('1. Stars');
+        print('2. Numbers ');
+	    read(option2);
+
+	    if option2 <- 1 then
+		begin 
+		    print('Enter the number of rows : ');
+		    read(rows);
+
+		// print the stars
+		 i <- 0;
+		 while i <= rows - 1 do 
+		  begin 
+		     j <- 0;
+		     while j <= i do 
+			print('*');
+			j <- j + 1;
+		     writeln 
+		  	i <- i + 1;
+		   end;
+	      	end
+	     else if option2 <- 2 then
+		begin
+		   print('Enter the number of rows : ');
+		   read(rows);
+		    for i <- 1 to rows - 1 do 
+			begin
+			  for j <- to i do 
+			   print(j:3);
+			   writeln;
+			end
+	     else 
+		begin
+		   print('Invalid option , you can only choose 1 or 2');
+		end;
+	end case 1
+
+    2 : start 
+        print('Choose number or stars : ');
+        print('1. Stars');
+        print('2. Numbers');
+        read option2;
+
+        if option2 <- 1 then 
+            start 
+                print ('Enter the number of rows');
+                read rows;
+                // print upper Diamond
+                i <- 1;
+                while i <= rows do
+                    // print spaces
+                    j <- 1 ;
+                    while j <= rows - i do
+                        start
+                            print (' ') ; // print spaces
+                            j += 1 ; // update value of j;
+                        end;
+                    // print stars
+                        j <- 1 ;
+                        while j <= 2 * i - 1 do
+                            start 
+                                print * ;
+                                j += 1 ; // update value of j;
+                            end;
+                            writeln; 
+                            i += 1 ; // update value of i
+
+                // print lower half of diamond
+                 i <- rows - 1 ;
+                    while i >= 1 do
+                        start
+                        while j <= rows - i do
+                            print (' ') ;
+                            j += 1 ; // update value of j;
+                        end;
+                            j  <- 1 ;
+                            while j <= 2 * i - 1 do
+                                start 
+                                    print * ;
+                                end;
+                                writeln;
+                                i -= 1 ; // update value of i
+            end;
+        else if option2 <- 2 then
+            start
+                print (' Enter the number of rows : ') ;
+                read rows ;
+
+                i <- 1;
+                while i <= rows do
+                    start
+                        j <- 1;
+                        while j <= rows - 1 do 
+                            start
+                                print (' ') ;
+                                j += 1; // increment j;
+                            end;
+
+                        j <- 1;
+                        while j <= 2 * i - 1 do
+                            start
+                                print j ;
+                                j += 1;
+                            end;
+                            writeln;
+                            i += 1;
+                    end;
+
+                // lower half of diamond
+                i <- rows - 1 ;
+                while i >= 1 do
+                    start
+                        j <- 1;
+                        while j <= rows - i do
+                            print (' ') ;
+                            j += 1;
+                        // print the stars
+                        j <- 1;
+                        while j <= 2 * i - 1 do
+                            print j ;
+                            j+= 1;
+
+                            writeln;
+                            i -= 1;
+                    end;
+
+            end
+        
+        else if option2 <- 3 then
+            
+
+
+
+
+
+
+    end of program
+
+	    
+  		

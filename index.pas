@@ -272,14 +272,16 @@ begin
             end
             else if option2 = '2' then
               begin
-                Writeln('Enter the number of  rows : '); ReadLn(rows);
-                writeln('Enter the number of coloumns : '); ReadLn(cols);
-
-                // print the numbers
-                for i := 1 to rows do
-                    for j := 1 to cols do 
-                      Write(j);  
-                      WriteLn;   
+               WriteLn('Enter the number of rows ') ; ReadLn(rows);
+               writeln('Enter the number of columns ') ; ReadLn(cols);
+              
+              // print the rectangle
+              for i := 1  to rows do
+                begin
+                  for j := 1 to cols do 
+                    Write(j:2);
+                    WriteLn;
+                end;
               end
               else 
               WriteLn('Invalid option , u can only choose between 1 and 2');
