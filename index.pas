@@ -149,7 +149,11 @@ begin
                       WriteLn;
                       i := i - 1;
                 end;
-          end;
+          end
+          else 
+          begin
+            WriteLn('Invalid option')
+        end;
     end;
     '3': begin
       // Pyramid

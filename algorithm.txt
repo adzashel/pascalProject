@@ -57,7 +57,8 @@ begin the program
 		end;
 	end case 1
 
-    2 : start 
+    2 : // diamond
+    start 
         print('Choose number or stars : ');
         print('1. Stars');
         print('2. Numbers');
@@ -147,15 +148,172 @@ begin the program
                     end;
 
             end
+            else 
+                start
+                print ( ' you can only choose one or two ');
+                end;
+        end;
+        end of option 2
+
+        3 : // pyramid
+            start   
+                print(' choose stars or numbers ');
+                print('1. Stars');
+                print('2. Numbers');
+                read option2;
+
+               if option2 <- 1 then
+                start
+                 print (' Enter the number of rows ' );
+                read rows;
+                 // print the pyramid
+                for i <- 1 to rows do
+                    start
+                        for j <- 1 to rows - i do
+                        // print the spaces
+                        print (' ');
+
+                        // print the stars
+                        for j <- to 2 * i - 1 do 
+                            print * ;
+                            writeln;
+                    end;
+                    readln;
+                end
+                else if option2 <- 2 then
+                    start
+                        print (' Enter the number of rows ' );
+                        read rows;
+
+                        // print the pyramid
+                        for i <- 1 to rows do 
+                            start
+                                for j <- 1 to rows - i do
+                                print (' ');
+
+
+                                for j <- 1 to 2 * i - 1 do
+                                    print j;
+                                    writeln;
+                            end;
+                            readln;
+
+                    end;
+
+                end
+                else 
+                print (' you can only choose one or two ');
+            end;
+            end of option 3
+
+        4 : // Rhombus
+            start
+                print(' choose stars or numbers ');
+                print('1. Stars');
+                print('2. Numbers');
+                read option2;
+
+                // print the Rhombus
+                print (' Enter the number of rows ' );
+                read rows;
+
+                if option2 <- 1 then
+                    start
+                    print('Enter the number of rows :'); 
+                    read rows ;
+                        i <- rows - 1;
+                        while i >= 1 do
+                            start
+                                j <- 1;
+                                while j <= rows - i do
+                                // print the spaces
+                                print (' ');
+                                j += 1; // increment value of j;        
+                            end;
+                            // print the stars
+                                j <- 1;
+                                while j <= 2 * i - 1 do
+                                start
+                                    print j;
+                                    j += 1; // increment value of j
+                                end;
+                                writeln;
+                            i -= 1; //
+
+                    end
+                    else if option2 <- 2 then
+                        start
+                        writeln('Enter the number of rows :'); 
+                        readln rows;
+
+                        i <- rows - 1;
+                        while i >= 1 do 
+                            start
+                                j <- 1;
+                                while j <= rows - 1 do
+                                    start
+                                        print ' ';
+                                        j += 1;
+                                    end;
+
+                                    j <- 1;
+                                    while j <= 2 * i - 1 do
+                                    start
+                                        print j;
+                                        j += 1;'
+                                    end;
+                                    writeln;
+                                    i -= 1;
+                            end;
+                    end;
+                    else 
+                        print (' invalid value ');
+            end;
+        end of option 4;
+
+        5 : // rectangle
+        start
+            print(' choose stars or numbers ');
+            print('1. Stars');
+            print('2. Numbers');
+            read option2;
         
-        else if option2 <- 3 then
-            
+         if option2 <- 1 then
+            start
+                print ( ' Enter the number of rows ');
+                print ( ' Enter the number of coloumns ');
+                read rows , cols;
 
+                i <- 0;
+                while i < rows do
+                    start
+                        j <- 0;
+                        while j < cols do
+                        print *;
+                        j += 1;
 
+                        writeln;
+                        i += 1;
+                    end;
+            end
+            else if option2 <- 2 then
+                start
+                print ( ' Enter the number of rows ');
+                print ( ' Enter the number of coloumns ');
+                read rows , cols;
 
+                for i <- 0 to rows do
+                    for j <- 0 to cols do
+                        print j;
+                        writeln;
+                end
+                else 
+                    print ( invalid option , u can only choose 1 or 2 ) ;
+        end
+        else 
+            print ( invalid option , u can only choose 1 - 5 ) ;
 
-
-
+    end.
     end of program
 
 	    
