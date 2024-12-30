@@ -6,6 +6,7 @@ option ,option2 : Char;
 i , j , rows , cols : integer;
 
 begin the program
+repeat
 	print(' -----------------Welcome to my program---------------- ')
 	print('This program provides you the pattern that contains stars or numbers')
 	print('Choose the pattern you want : ');
@@ -313,6 +314,10 @@ begin the program
         else 
             print ( invalid option , u can only choose 1 - 5 ) ;
 
+        print (' Regenrate the pattern') ;
+        read generate
+
+        until generate = 'no' ;
     end.
     end of program
 

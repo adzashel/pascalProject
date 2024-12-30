@@ -3,8 +3,10 @@ uses crt;
 
 var option , option2: Char;
     i, j, rows, cols: Integer;
-
+    generate : String;
 begin
+repeat
+  
   WriteLn('-----------------Welcome to my program----------------');
   WriteLn('This program provides the patterns that contains the stars or numbers');
   WriteLn('Choose the pattern you want : ');
@@ -295,4 +297,7 @@ begin
           WriteLn('Invalid option');
         end;
   end;
+
+  WriteLn('Regenerate ? ( Yes / No ) '); Readln(generate);
+  until generate = 'no';
 end.
