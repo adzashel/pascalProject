@@ -1,7 +1,7 @@
 program index;
 uses crt;
 
-var option , option2: Char;
+var pattern , option: Char;
     i, j, rows, cols: Integer;
     generate : String;
 begin
@@ -15,16 +15,16 @@ repeat
   WriteLn('3. Pyramid');
   WriteLn('4. Rhombus');
   WriteLn('5. Rectangle');
-  ReadLn(option);
+  ReadLn(pattern);
 
-  case option of
+  case pattern of
     '1': begin
         WriteLn('Choose stars or numbers ? ');
         WriteLn('1. Stars');
         WriteLn('2. Numbers ');
-        ReadLn(option2);
+        ReadLn(option);
 
-        if option2 = '1' then
+        if option = '1' then
           begin
             WriteLn('Enter the number of rows : '); ReadLn(rows);
               i := 0;
@@ -40,7 +40,7 @@ repeat
                     i := i + 1;
                 end;
           end
-          else if option2 = '2' then
+          else if option = '2' then
             begin
               WriteLn('Enter the number of rows : '); ReadLn(rows);
               for i := 0 to rows - 1 do 
@@ -60,9 +60,9 @@ repeat
       Writeln('Choose number or stars : ');
       WriteLn('1. Stars ');
       WriteLn('2. Number ');
-      ReadLn(option2);
+      ReadLn(option);
 
-      if option2 = '1' then
+      if option = '1' then
         begin
           WriteLn('Enter the number of rows : '); ReadLn(rows);
           i := 1;
@@ -107,7 +107,7 @@ repeat
                   i := i - 1;
               end;
         end
-        else if option2 = '2' then
+        else if option = '2' then
           begin
             Writeln('Enter number of rows: '); Readln(rows);
             // upper half of diamond
@@ -162,8 +162,8 @@ repeat
      Writeln('Choose stars or numbers');
      WriteLn('1. stars');
      WriteLn('2. numbers');
-     ReadLn(option2);
-      if option2 = '1' then
+     ReadLn(option);
+      if option = '1' then
         begin
             WriteLn('Enter the number of rows : '); ReadLn(rows);
             // create pyramid   
@@ -178,7 +178,7 @@ repeat
               end;
               ReadLn;
          end
-         else if option2 = '2' then
+         else if option = '2' then
            begin
              WriteLn('Enter the rows : '); ReadLn(rows);
               // print spaces
@@ -201,9 +201,9 @@ repeat
       Writeln('Choose stars or numbers : ');
       WriteLn('1. Stars');
       Writeln('2. Numbers');
-      readln(option2);
+      readln(option);
 
-      if option2 = '1' then
+      if option = '1' then
         begin
         Write('Enter the number of rows :'); ReadLn(rows);
           i := rows - 1;
@@ -226,7 +226,7 @@ repeat
                 i := i - 1;
           end;
         end
-        else if option2 = '2' then
+        else if option = '2' then
           begin
             writeln('Enter the number of rows :'); readln(rows);
             // print spaces 
@@ -256,9 +256,9 @@ repeat
           WriteLn('Choose stars or numbers');
           Writeln('1. Stars ');
           Writeln('2. Numbers');
-          ReadLn(option2);
+          ReadLn(option);
 
-          if option2 = '1' then
+          if option = '1' then
             begin
               Writeln('Enter the numbers of rows : '); readln(rows);
               writeln('Enter the numbers of coloumns :'); ReadLn(cols);
@@ -276,7 +276,7 @@ repeat
                     i := i + 1;
                 end;
             end
-            else if option2 = '2' then
+            else if option = '2' then
               begin
                WriteLn('Enter the number of rows ') ; ReadLn(rows);
                writeln('Enter the number of columns ') ; ReadLn(cols);
