@@ -2,8 +2,9 @@ program index;
 uses crt;
 
 var pattern , option: Char;
-    i, j, rows, cols: Integer;
+    i, j, rows, cols, spaces: Integer;
     generate : String;
+    
 begin
 repeat
   
@@ -169,7 +170,8 @@ repeat
             // create pyramid   
             for i := 1 to rows do 
               begin
-                for j:= 1 to rows - i do 
+              spaces := rows - i;
+                for j:= 1 to spaces do 
                   Write(' '); 
 
                   for j := 1 to 2 * i - 1 do
@@ -184,7 +186,8 @@ repeat
               // print spaces
              for i := 1 to rows do
                begin
-                 for j := 1 to rows - i do 
+               spaces := rows - i;
+                 for j := 1 to spaces do 
                   Write(' '); 
                 // print number
                   for j := 1 to 2 * i - 1 do
@@ -198,59 +201,69 @@ repeat
       end;
     '4': begin
       // Rhombus
-      Writeln('Choose stars or numbers : ');
-      WriteLn('1. Stars');
-      Writeln('2. Numbers');
-      readln(option);
+      WriteLn('Choose stars or numbers :'); 
+      WriteLn('1. Stars ');
+      WriteLn('2. Numbers');
+      ReadLn(option);
+      
+        if option = '1' then
+          begin
+             writeln('Enter the number of rows: ');
+          readln(rows);
 
-      if option = '1' then
-        begin
-        Write('Enter the number of rows :'); ReadLn(rows);
-          i := rows - 1;
+          i := rows;
           while i >= 1 do
           begin
-          j := 1;
-            while j <= rows - i do
-              begin
-                Write(' ');
-                j := j + 1;
-              end;
-              // priint stars
-              j := 1;
-              while j <= 2 * i - 1 do
-                begin
-                  Write('*');
-                  j := j + 1;
-                end;
-                WriteLn;
-                i := i - 1;
+            // Print spaces before the stars
+            spaces := rows - i;
+            j := 1;
+            while j <= spaces do
+            begin
+                    write(' ');
+              j := j + 1;
+            end;
+
+            // Print stars
+            j := 1;
+            while j <= 2 * i - 1 do
+            begin
+             write('*');
+              j := j + 1;
+            end;
+            writeln;
+            i := i - 1;
           end;
-        end
-        else if option = '2' then
-          begin
-            writeln('Enter the number of rows :'); readln(rows);
-            // print spaces 
-            i := rows - 1;
-            while i >=1 do
+          end
+          else if option = '2' then
+            begin
+              Writeln('Enter the number of rows :');
+              ReadLn(rows);
+
+              i := rows;
+              while i >= 1 do
+                begin
+                  j := 1;
+                  spaces := rows - i;
+                  while j <= spaces do
+                  begin
+                    Write(' ');
+                    j := j + 1;
+                  end;
+                  j := 1;
+                while j <= 2 * i - 1 do
+                  begin
+                    Write(j);
+                    j := j + 1;
+                  end;
+                  Writeln;
+                  i := i - 1;
+                end;
+            end
+            else 
               begin
-                j:= 1;
-                while j >= rows - i do
-                begin
-                  Write(' ');
-                  j := j + 1;
-                end;
-                // print stars 
-                j := 1;
-                while j >= 2 * i - 1 do
-                begin
-                  Write(j);
-                  j := j + 1;
-                end;
-                WriteLn;
-                i := i - 1;
+                WriteLn('Invalid option');
               end;
-          end;
-      end;
+        end;
       '5' : 
         begin
           WriteLn('Choose stars or numbers');
