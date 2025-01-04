@@ -2,8 +2,8 @@ program pascal;
 uses sysUtils , crt ;
 
 declaration variables
-option ,option2 : Char;
-i , j , rows , cols : integer;
+pattern ,option : Char;
+i , j , rows , cols , spaces : integer;
 
 begin the program
 repeat
@@ -23,9 +23,9 @@ repeat
 	    print('Choose the stars or numbers : '); 
 	    print('1. Stars');
         print('2. Numbers ');
-	    read(option2);
+	    read(option);
 
-	    if option2 <- 1 then
+	    if option <- 1 then
 		begin 
 		    print('Enter the number of rows : ');
 		    read(rows);
@@ -42,7 +42,7 @@ repeat
 		  	i <- i + 1;
 		   end;
 	      	end
-	     else if option2 <- 2 then
+	     else if option <- 2 then
 		begin
 		   print('Enter the number of rows : ');
 		   read(rows);
@@ -63,9 +63,9 @@ repeat
         print('Choose number or stars : ');
         print('1. Stars');
         print('2. Numbers');
-        read option2;
+        read option;
 
-        if option2 <- 1 then 
+        if option <- 1 then 
             start 
                 print ('Enter the number of rows');
                 read rows;
@@ -105,7 +105,7 @@ repeat
                                 writeln;
                                 i -= 1 ; // update value of i
             end;
-        else if option2 <- 2 then
+        else if option <- 2 then
             start
                 print (' Enter the number of rows : ') ;
                 read rows ;
@@ -161,9 +161,9 @@ repeat
                 print(' choose stars or numbers ');
                 print('1. Stars');
                 print('2. Numbers');
-                read option2;
+                read option;
 
-               if option2 <- 1 then
+               if option <- 1 then
                 start
                  print (' Enter the number of rows ' );
                 read rows;
@@ -181,7 +181,7 @@ repeat
                     end;
                     readln;
                 end
-                else if option2 <- 2 then
+                else if option <- 2 then
                     start
                         print (' Enter the number of rows ' );
                         read rows;
@@ -212,17 +212,17 @@ repeat
                 print(' choose stars or numbers ');
                 print('1. Stars');
                 print('2. Numbers');
-                read option2;
+                read option;
 
                 // print the Rhombus
                 print (' Enter the number of rows ' );
                 read rows;
 
-                if option2 <- 1 then
+                if option <- 1 then
                     start
                     print('Enter the number of rows :'); 
                     read rows ;
-                        i <- rows - 1;
+                        i <- rows ;
                         while i >= 1 do
                             start
                                 j <- 1;
@@ -242,7 +242,7 @@ repeat
                             i -= 1; //
 
                     end
-                    else if option2 <- 2 then
+                    else if option <- 2 then
                         start
                         writeln('Enter the number of rows :'); 
                         readln rows;
@@ -277,9 +277,9 @@ repeat
             print(' choose stars or numbers ');
             print('1. Stars');
             print('2. Numbers');
-            read option2;
+            read option;
         
-         if option2 <- 1 then
+         if option <- 1 then
             start
                 print ( ' Enter the number of rows ');
                 print ( ' Enter the number of coloumns ');
@@ -297,7 +297,7 @@ repeat
                         i += 1;
                     end;
             end
-            else if option2 <- 2 then
+            else if option <- 2 then
                 start
                 print ( ' Enter the number of rows ');
                 print ( ' Enter the number of coloumns ');
