@@ -247,6 +247,43 @@ var pattern , option: Char;
 
             upSideDownPyramid := 1;
         end;
+
+        function rectangle(option : Char): Integer;
+          begin
+            if option = '1' then
+            begin
+              WriteLn('Enter the number of rows : '); Readln(rows);
+              WriteLn('Enter the number of columns : '); Readln(cols);
+
+              i := 1;
+              while i < rows do
+                begin
+                  j := 1;
+                  while  j < cols do
+                    begin
+                      Write('*');
+                      Inc(j);
+                    end;
+                    WriteLn;
+                    Inc(i);
+                end;
+            end
+            else if option = '2' then
+              begin
+                 WriteLn('Enter the number of rows : '); Readln(rows);
+              WriteLn('Enter the number of columns : '); Readln(cols);
+
+              for i := 1 to rows do
+                begin
+                  for j := 1 to cols do
+                    Write(j:2);
+                  WriteLn;
+                end;
+              end
+              else
+              WriteLn('U can only choose 1  or 2');
+              rectangle := 1;
+          end;
 begin
 
 repeat
@@ -308,39 +345,8 @@ repeat
           Writeln('2. Numbers');
           ReadLn(option);
 
-          if option = '1' then
-            begin
-              Writeln('Enter the numbers of rows : '); readln(rows);
-              writeln('Enter the numbers of coloumns :'); ReadLn(cols);
-              // print the stars
-              i := 0;
-              while i < rows do
-                begin
-                j := 0;
-                  while j < cols  do
-                    begin
-                      Write('*');
-                      j := j + 1;
-                    end;
-                    WriteLn;
-                    i := i + 1;
-                end;
-            end
-            else if option = '2' then
-              begin
-               WriteLn('Enter the number of rows ') ; ReadLn(rows);
-               writeln('Enter the number of columns ') ; ReadLn(cols);
-              
-              // print the rectangle
-              for i := 1  to rows do
-                begin
-                  for j := 1 to cols do 
-                    Write(j:2);
-                    WriteLn;
-                end;
-              end
-              else 
-              WriteLn('Invalid option , u can only choose between 1 and 2');
+          // call the function
+          rectangle(option);
         end;
       else
         begin
